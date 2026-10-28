@@ -13,7 +13,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-      - uses: android-actions/setup-android@v3
+      # the ubuntu runner image already ships the Android SDK (ANDROID_HOME)
       - name: Unit tests (layout engine, PNG writer)
         run: ./gradlew testDebugUnitTest --no-daemon
       - name: Build debug APK (release APK is signed locally with the private key)
